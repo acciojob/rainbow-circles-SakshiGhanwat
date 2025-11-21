@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Six Concentric Circles (CSS only)</title>
   <style>
-    /* container to center the whole artwork on page */
     body, html {
       height: 100%;
       margin: 0;
@@ -15,17 +14,14 @@
       background: #fff;
     }
 
-    /* outermost DIV (300x300) */
     #one {
-      position: relative;             /* pseudo-elements positioned relative to this */
+      position: relative;
       width: 300px;
       height: 300px;
       border-radius: 50%;
-      background: #ff0000;            /* red - 300px */
-      display: block;
+      background: #ff0000;
     }
 
-    /* ::before -> 250x250 (orange) */
     #one::before {
       content: "";
       position: absolute;
@@ -35,11 +31,9 @@
       height: 250px;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: #ffa500;            /* orange - 250px */
-      z-index: 1;
+      background: #ffa500;
     }
 
-    /* ::after -> 200x200 (yellow) */
     #one::after {
       content: "";
       position: absolute;
@@ -49,11 +43,9 @@
       height: 200px;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: #ffff00;            /* yellow - 200px */
-      z-index: 2;
+      background: #ffff00;
     }
 
-    /* middle DIV inside #one -> 150x150 (green) */
     #two {
       position: absolute;
       top: 50%;
@@ -62,11 +54,9 @@
       height: 150px;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: #008000;            /* green - 150px */
-      z-index: 3;
+      background: #008000;
     }
 
-    /* #two::before -> 100x100 (blue) */
     #two::before {
       content: "";
       position: absolute;
@@ -76,25 +66,18 @@
       height: 100px;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: #0000ff;            /* blue - 100px */
-      z-index: 4;
+      background: #0000ff;
     }
 
-    /* inner DIV -> 50x50 (purple) */
+    /* FIXED PART */
     #three {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+      position: relative;
       width: 50px;
       height: 50px;
-      transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: #800080;            /* purple - 50px */
-      z-index: 5;
+      background: #800080;
+      z-index: 999;
     }
-
-    /* ensure pseudo-elements are on top of their parent background but behind smaller circles where needed */
-    /* (z-index values above handle stacking) */
   </style>
 </head>
 <body>
